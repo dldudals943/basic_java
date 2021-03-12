@@ -48,13 +48,13 @@ public class Etc {
 		
 		//숫자를 입력받고, 그 숫자가 1이나 3이면 남자를 2나 4면 여자를 출력해주세요.
 		//그 외의 숫자를 입력하면 확인불가를 출력해주세요.
-		Scanner sc = new Scanner(System.in);
-		System.out.println("숫자 입력");
-		int num1 = Integer.parseInt(sc.nextLine());
-		System.out.println( num1 == 1 || num1 == 3 ? "남자" : (num1 == 2 || num1 == 4 ? "여자" : "확인불가") );
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("숫자 입력");
+//		int num1 = Integer.parseInt(sc.nextLine());
+//		System.out.println( num1 == 1 || num1 == 3 ? "남자" : (num1 == 2 || num1 == 4 ? "여자" : "확인불가") );
+//		
 		
-		
-		
+		String s1 = Integer.toString(regNo);
 		
 		
 	}
