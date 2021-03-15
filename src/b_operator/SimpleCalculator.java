@@ -23,7 +23,7 @@ public class SimpleCalculator {
 			(op.equals("*") == true ? Integer.toString(num1 * num2) : (op.equals("/") == true ? Integer.toString(num1 / num2) : 
 				(op.equals("%") == true ? Integer.toString(num1 % num2) : "계산불가")))) ;
 
-		System.out.println(result);
+		System.out.println(num1 +" "+ op +" "+ num2 +" = "+ result );
 		
 		
 	}
