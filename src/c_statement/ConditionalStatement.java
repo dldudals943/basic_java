@@ -277,37 +277,83 @@ public class ConditionalStatement {
 //		
 		
 		//1~100 사이의 랜덤한 수를 3개 발생시키고 오름차순으로 출력해주세요.
+//		
+//		double a = Math.ceil(Math.random()*100);
+//		double b = Math.ceil(Math.random()*100);
+//		double c = Math.ceil(Math.random()*100);
+//		
+//		System.out.println("내림차순");
+//		
+//		if (a > b) {
+//			if (a > c) {
+//				if (b > c) {
+//					System.out.println(a + " " + b + " " + c);
+//				} else {
+//					System.out.println(a + " " + c + " " + b);
+//				}
+//
+//			} else {
+//				System.out.println(c + " " + a + " " + b);
+//			}
+//		} else if (b > a) {
+//			if (b > c) {
+//				if (a > c) {
+//					System.out.println(b + " " + a + " " + c);
+//				} else {
+//					System.out.println(b + " " + c + " " + a);
+//				}
+//			} else {
+//				System.out.println(c + " " + b + " " + a);
+//			}
+//		}
+//	// 내림차순
+//		
+//		System.out.println("오름차순");
+//		
+//		if (a > b) {
+//			if (a > c) {
+//				if (b > c) {
+//					System.out.println(c + " " + b + " " + a);
+//				} else {
+//					System.out.println(b + " " + c + " " + a);
+//				}
+//
+//			} else {
+//				System.out.println(b + " " + a + " " + c);
+//			}
+//		} else if (b > a) {
+//			if (b > c) {
+//				if (a > c) {
+//					System.out.println(c + " " + a + " " + b);
+//				} else {
+//					System.out.println(a + " " + c + " " + b);
+//				}
+//			} else {
+//				System.out.println(a + " " + b + " " + c);
+//			}
+//		}
+//	// 오름차순
 		
-		double a = Math.ceil(Math.random()*100);
-		double b = Math.ceil(Math.random()*100);
-		double c = Math.ceil(Math.random()*100);
+		int x = (int)(Math.random()*100)+1; 
+		int y = (int)(Math.random()*100)+1;
+		int z = (int)(Math.random()*100)+1;
+	
+		int temp = 0;
 		
-		if (a > b) {
-			if (a > c) {
-				if (b > c) {
-					System.out.println(a + " " + b + " " + c);
-				} else {
-					System.out.println(a + " " + c + " " + b);
-				}
-
-			} else {
-				System.out.println(c + " " + a + " " + b);
-			}
-		} else if (b > a) {
-			if (b > c) {
-				if (a > c) {
-					System.out.println(b + " " + a + " " + c);
-				} else {
-					System.out.println(b + " " + c + " " + a);
-				}
-			} else {
-				System.out.println(c + " " + b + " " + a);
-			}
-		}
-	
-	
-	
+		if (x>y){
+			temp = x;
+			x = y;
+			y = temp;}
+		if(x>z){
+			temp = x;
+			x = z;
+			z = temp;}
+		if(y>z){
+			temp = y;
+			y = z;
+			z = temp;}
 		
+		System.out.println(x + " " + y + " " + z);
 		
 		
 
