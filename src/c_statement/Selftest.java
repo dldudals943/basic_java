@@ -64,7 +64,7 @@ public class Selftest {
 		}else{
 			System.out.println("건강합니다");
 		}
-		
+		//개발할 때 사용자가 사용하기 편하게 개발을 해야 한다.
 	}
 
 }
