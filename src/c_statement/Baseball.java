@@ -85,14 +85,64 @@ public class Baseball {
 
 		System.out.println(strike + "S " + ball + "B " + out + "O");
 		
-		}
 		
 		
 		
 		
-		
-		
-		
+		 //선생님 코딩
+		 	int a1 = 0;
+		 	int a2 = 0;
+		 	int a3 = 0;
+		 
+		 	do{
+		 	a1 = (int)(Math.random()*9)+1;
+		 	a2 = (int)(Math.random()*9)+1;
+		 	a3 = (int)(Math.random()*9)+1;
+		 
+		 	}while(a1==a2 || a1 == a3|| a2 == a3);
+		 	
+		 	int count = 0;
+		 	
+		 	while(true){
+		 		System.out.println("3자리 숫자>");
+		 		int input2 = Integer.parseInt(s.nextLine());
+		 		int i3 = input % 10;
+		 		input /=10;
+		 		int i2 = input % 10;
+		 		input /=10;
+		 		int i1 = input % 10;
+		 		
+		 		int strike2 = 0;
+		 		int ball2 = 0;
+		 		int out2 = 0;
+		 		
+		 		if(a1 == i1) strike2 ++;
+		 		if(a2 == i2) strike2 ++;
+		 		if(a3 == i3) strike2 ++;
+		 		
+		 		if(a1 == i2 || a1 == i3) ball2 ++;
+		 		if(a2 == i1 || a2 == i3) ball2 ++;
+		 		if(a3 == i1 || a3 == i2) ball2 ++;
+		 		
+		 		out2 = 3 - strike2 - ball2;
+		 		
+		 		System.out.println( ++count + "차 시도(" + i1 + i2 + i3 + ") : " + strike2 + "S " + ball2 + "B " + out2 + "O");
+		 		System.out.println("------------------------------------");
+		 		if (strike2 == 3){
+		 			System.out.println("정답입니다!");
+		 			break;
+		 		}
+		 	
+		 		
+		 	//선생님 코딩이 가독성이 더 좋은 것 같다	
+		 	//과제를 하면서 공부가 되었는가가 중요하다
+		 		
+		 		
+		 		
+		 		
+		 		
+		 	}
+		 	}
 		
 		
 		
