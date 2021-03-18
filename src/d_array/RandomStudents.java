@@ -11,8 +11,8 @@ public class RandomStudents {
 		//입력한 숫자만큼 우리반 학생들 중 랜덤으로 뽑아서 출력하는 프로그램을 만들어주세요.
 		Scanner s = new Scanner(System.in);
 		//1에서 25
-		System.out.println("1에서 25사이의 숫자를 입력해주세요.");
-		int n = Integer.parseInt(s.nextLine());
+		//System.out.println("1에서 25사이의 숫자를 입력해주세요.");
+		//int n = Integer.parseInt(s.nextLine());
 		String[] name = new String[25];
 		name[0]="강유진";
 		name[1]="강지수";
@@ -40,25 +40,64 @@ public class RandomStudents {
 		name[23]="최소은";
 		name[24]="최윤지";
 		
-		Random rand = new Random();
-		rand.setSeed(System.nanoTime());
-		int bound = 25;
-		int ran = rand.nextInt(bound);
+//		Random rand = new Random();
+//		rand.setSeed(System.nanoTime());
+//		int bound = 25;
+//		int ran;
+//		
+//		
+//		for(int i = 0; i < n; i++){
+//			String temp = name[i];
+//			ran = rand.nextInt(bound);
+//			name[i] = name[ran];
+//			name[ran] = temp;
+//		}
+//		String[] name2 = new String[n];
+//		for(int i = 0 ; i < n; i++){
+//			name2[i]=name[i];
+//		}
+//		
+//		
+//		System.out.println(Arrays.toString(name2));
 		
+		//선생님 코딩 
+		//문제에서 말하는 그대로 코딩을 함
+		String[] students = name;
+		System.out.println("몇명 뽑을까요?");
+		int count = Integer.parseInt(s.nextLine());
 		
-		for(int i = 0; i < n; i++){
-			String temp = name[i];
+		String[] pick = new String[count];
+		int pickCount = 0;
+		
+		do{
+			int random = (int)(Math.random()*students.length);
+			boolean flag = true;
+			for(int i=0; i<pick.length ; i++){
+				if(students[random].equals(pick[i])){
+					flag = false;
+				}
+			}
+			if (flag){
+				pick[pickCount++] = students[random];
+			}
 			
-			name[i] = name[ran];
-			name[ran] = temp;
-		}
-		String[] name2 = new String[n];
-		for(int i = 0 ; i < n; i++){
-			name2[i]=name[i];
-		}
+		}while(pickCount < count);
+		System.out.println(Arrays.toString(pick));
+		
+		//근데 왜 중복이 안 되지???
 		
 		
-		System.out.println(Arrays.toString(name2));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
