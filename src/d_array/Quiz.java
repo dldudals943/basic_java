@@ -4,6 +4,8 @@ import java.util.Arrays;
 
 public class Quiz {
 
+	private static final int count1 = 0;
+
 	public static void main(String[] args) {
 		//거스름돈 동전 개수
 		int money = (int)(Math.random()*500)*10;
@@ -120,15 +122,87 @@ public class Quiz {
 		
 		System.out.println(Arrays.toString(arr2));
 		
+		//선생님 답
+		int[] temp = new int[5];
+		count = 0;
+		for(int i = 0; i < arr.length; i++){
+			boolean flag = true;
+			for(int j =0;j<temp.length;j++){
+				if(arr[i]==temp[j]){
+					flag=false;
+				}
+			}
+			if(flag){
+				temp[count++] = arr[i];
+			}
+		}
+		
+		int[] result = new int[count];
+		for(int i = 0 ; i < result.length; i++){
+			result[i] = temp[i];
+		}
+		
+		System.out.println(Arrays.toString(result));
+		
+		//내 코딩과 다르게 일단 5개의 최대값을 산정하여 임시 배열을 만들고 시작하셨다.
 		
 		
+		//오늘의 과제
+		arr = new int[100];
+		for(int i = 0 ; i < arr.length; i++){
+			arr[i] = (int)(Math.random()*100) + 1;
+		}
+		/*
+		 * 2~5사이의 랜덤한 수로 나누어 떨어지는 숫자로만 이루어진 배열을 정렬하여 출력해주세요.
+		 * 5
+		 * [5, 10, 15, 20, 25, 30]
+		 */
 		
+		int n1 = (int)(Math.random()*4)+2;
+		System.out.println(n1+"로 나눕니다.");
+		int[] arr3 = new int[50];
+		int count1 = 0;
+		for (int i = 0; i < arr.length; i++) {
+			boolean flag = true;
+			if (arr[i] % n1 == 0) {
+				for (int j = 0; j < arr3.length; j++) {
+					if (arr[i] == arr3[j]) {
+						flag = false;
+					}
+				}
+
+				if (flag) {
+					arr3[count1++] = arr[i];
+				}
+			}
+		}
+		System.out.println(Arrays.toString(arr3));
+		count1 =0;
+		for (int i =0; i < arr3.length; i++){
+			if (arr3[i]==0) break;
+			count1++;
+		}
+		System.out.println(count1);
+		int[] arr4 = new int[count1];
+		for(int i = 0 ; i < count1 ; i++){
+			arr4[i]=arr3[i];
+		}
+		System.out.println(Arrays.toString(arr4));
 		
+		for(int i = 1; i < arr4.length; i++){
+			int temp1 = arr4[i];
+			int j;
+			for (j = i-1; j >=0; j--){
+				if(temp1 < arr4[j]){
+					arr4[j+1]=arr4[j];
+				}else{
+					break;
+				}
+			}
+			arr4[j+1] = temp1;
+		}
 		
-		
-		
-		
-		
+		System.out.println(Arrays.toString(arr4));
 		
 		
 		
