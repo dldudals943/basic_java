@@ -158,34 +158,31 @@ public class Quiz {
 		 * [5, 10, 15, 20, 25, 30]
 		 */
 		
-		int n1 = (int)(Math.random()*4)+2;
+		int n1 = (int)(Math.random()*4)+2; // 2~5사이의 랜덤한 정수 생성
 		System.out.println(n1+"로 나눕니다.");
-		int[] arr3 = new int[50];
+		int[] arr3 = new int[50]; // 50개짜리 배열 생성
 		int count1 = 0;
 		for (int i = 0; i < arr.length; i++) {
 			boolean flag = true;
-			if (arr[i] % n1 == 0) {
-				for (int j = 0; j < arr3.length; j++) {
+			if (arr[i] % n1 == 0) { //나머지가 0일 때
+				for (int j = 0; j < arr3.length; j++) { //이미 넣은 숫자와 겹치지 않는다면
 					if (arr[i] == arr3[j]) {
 						flag = false;
 					}
 				}
 
 				if (flag) {
-					arr3[count1++] = arr[i];
+					arr3[count1++] = arr[i]; //배열에 넣고 count1을 하나 증가
 				}
 			}
 		}
-		System.out.println(Arrays.toString(arr3));
-		count1 =0;
-		for (int i =0; i < arr3.length; i++){
-			if (arr3[i]==0) break;
-			count1++;
-		}
-		System.out.println(count1);
-		int[] arr4 = new int[count1];
-		for(int i = 0 ; i < count1 ; i++){
-			arr4[i]=arr3[i];
+		System.out.println(Arrays.toString(arr3)); // 임시 배열 출력
+
+		
+		
+		int[] arr4 = new int[count1]; //count1만큼의 배열 생성
+		for(int i = 0 ; i < count1 ; i++){ 
+			arr4[i]=arr3[i]; //넣는다
 		}
 		System.out.println(Arrays.toString(arr4));
 		
@@ -200,14 +197,9 @@ public class Quiz {
 				}
 			}
 			arr4[j+1] = temp1;
-		}
+		} //삽입 정렬로 최종 정렬
 		
-		System.out.println(Arrays.toString(arr4));
-		
-		
-		
-		
-		
+		System.out.println(Arrays.toString(arr4)); // 최종 배열 출력
 		
 		
 		
