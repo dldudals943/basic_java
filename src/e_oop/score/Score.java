@@ -97,6 +97,8 @@ public class Score {
 		//Student 클래스에 sum 이랑 avg가 이미 있었네 그것도 모르고 쌩으로 또 만들어서 낭비함
 		//공유폴더에 선생님 코딩이 있음
 		
+		
+		
 	}
 
 }
