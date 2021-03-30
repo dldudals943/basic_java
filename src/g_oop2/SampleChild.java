@@ -47,9 +47,10 @@ public class SampleChild extends SampleParent{
 		sp = (SampleParent)sc;
 		//자식에서 -> 부모타입 형변환은 생략이 가능하다.
 		
-		sc = (SampleChild)new SampleParent(); //이거 런타임 에러남
+		//sc = (SampleChild)new SampleParent(); //이거 런타임 에러남
 		sp = new SampleChild(); //형변환 생략이 가능함
 		
+	
 	}
 	
 	
