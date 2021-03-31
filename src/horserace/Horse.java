@@ -13,6 +13,10 @@ public class Horse {
 	boolean condition;
 	boolean finish;
 	
+	void init(){
+		finish = true;
+	}
+	
 	Horse(String name, int speed, int stamina, int power, int spirit, int intel){
 		this.name = name;
 		this.speed = speed;

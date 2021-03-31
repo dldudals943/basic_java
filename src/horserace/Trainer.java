@@ -15,7 +15,8 @@ public class Trainer {
 	}
 
 	void training(int n, Horse horse) {
-		horse.stat[n] = 20 * skill[n];
+		horse.stat[n] += 20 * skill[n];
+		System.out.println("스탯 상승");
 		horse.upDate();
 		exp[n] += 20;
 		levelUp();
