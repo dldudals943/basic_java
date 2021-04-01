@@ -1,5 +1,7 @@
 package horserace;
 
+import java.util.Arrays;
+
 public class Trainer {
 	int[] skill;
 	int[] exp;
@@ -15,11 +17,13 @@ public class Trainer {
 	}
 
 	void training(int n, Horse horse) {
-		horse.stat[n] += 20 * skill[n];
-		System.out.println("스탯 상승");
+		horse.stat[n-1] += 5 * skill[n-1];
+		System.out.println("스탯이 올라갔습니다!");
+		System.out.println(Arrays.toString(horse.stat));
 		horse.upDate();
-		exp[n] += 20;
-		levelUp();
+		System.out.println(horse.stat[n-1]);
+		//exp[n-1] += 20;
+		//levelUp();
 	}
 
 	void levelUp() {
