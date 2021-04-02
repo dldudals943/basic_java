@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Trainer {
 	int[] skill;
 	int[] exp;
+	int fan;
 
 	Trainer(int a, int b, int c, int d, int e) {
 		skill = new int[] { a, b, c, d, e };

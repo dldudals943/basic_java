@@ -49,6 +49,7 @@ public class HorseRacing {
 		train();
 		race(sta4); // 네번째 레이스
 		System.out.println("모든 레이스에서 승리했습니다!");
+		System.out.println("최종 팬 수는 " + hero.fan + "명 입니다. 축하합니다!!");
 	}
 	
 	void race(Stadium sta1){
@@ -86,6 +87,10 @@ public class HorseRacing {
 			
 		}
 		System.out.println(race++ + "번째 경기에서 승리했습니다!");
+		int plusfan = (sta1.meter)*(sta1.level+1)*(myhorse.position - (enemy1.position + enemy2.position + enemy3.position)/3);
+		System.out.println(plusfan + "만큼의 팬이 증가했습니다!");
+		hero.fan += plusfan;
+		System.out.println("현재 팬 수는 " + hero.fan + "입니다!");
 		myhorse.init();
 		enemy1.init();
 		enemy1.statup((int)(Math.random()*11), (int)(Math.random()*11), (int)(Math.random()*11)+5, (int)(Math.random()*11)+10, (int)(Math.random()*11)+5);
@@ -111,3 +116,9 @@ public class HorseRacing {
 	}
 	
 }
+
+
+
+
+
+
