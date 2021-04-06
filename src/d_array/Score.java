@@ -150,7 +150,7 @@ public class Score {
 		
 		//출력하기
 		System.out.println();
-		System.out.println(Arrays.toString(rank));
+		//System.out.println(Arrays.toString(rank));
 		
 		//내일 시험에 나옵니다.
 		//공동 등수가 있을 경우를 어떻게 해야겠다.
