@@ -1,5 +1,6 @@
 package j_collection;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Date;
@@ -11,6 +12,7 @@ public class Board {
 	static ArrayList<HashMap<String, Object>> table = new ArrayList<>();
 	static HashMap<String, Object> row = new HashMap<>();
 	static int number = 1;
+	static SimpleDateFormat format = new SimpleDateFormat("yy-MM-dd");
 	
 	public static void main(String[] args) {
 		/*
@@ -42,11 +44,12 @@ public class Board {
 				System.out.println("조회하고 싶은 글의 번호를 입력해주세요");
 				int m = ScanUtil.nextInt();
 				if(0 < m && m < number) inquiry(m);
-				System.out.println("1. 수정    2.삭제");
+				System.out.println("1. 수정    2.삭제    0.뒤로");
 				int l = ScanUtil.nextInt();
 				switch(l){
 				case 1 : modify(m); break;
 				case 2 : delete(m); break;
+				case 0 : break;
 				}
 				break;
 			case 2 :
@@ -70,7 +73,7 @@ public class Board {
 			HashMap<String, Object> _row = table.get(table.size()-i-1);
 			
 			System.out.println(_row.get("number") + "\t"
-					+ _row.get("title") + "\t\t" + _row.get("user") + "\t\t" +_row.get("date"));
+					+ _row.get("title") + "\t\t" + _row.get("user") + "\t\t" +format.format(_row.get("date")));
 
 			
 		}
@@ -100,7 +103,7 @@ public class Board {
 			if(n == number){
 				System.out.println("--------------------------------------------------");
 				System.out.println(_row.get("number") + "\t"
-						+ _row.get("title") + "\t\t" + _row.get("user") + "\t\t" +_row.get("date"));
+						+ _row.get("title") + "\t\t" + _row.get("user") + "\t\t" +format.format(_row.get("date")));
 				System.out.println("--------------------------------------------------");
 				System.out.println(_row.get("contents"));
 				
