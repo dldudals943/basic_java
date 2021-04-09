@@ -1,39 +1,40 @@
 package test;
 
-import java.util.LinkedList;
+import java.util.Arrays;
 
 public class Test5 {
 	public static void main(String[] args) {
-		int n = 10;
-        int answer = 0;
-        int count = 0; 
-//      ArrayList<Integer> arr = new ArrayList<>(); // 2부터 n까지 넣을 배열 만든다.
-        LinkedList<Integer> arr = new LinkedList<>(); // 2부터 n까지 넣을 배열 만든다.
-        for(int i=2; i <=n; i++){
-            arr.add(i); // 2부터 n까지 넣어준다.
-        }
-        
-        while(true){
-            if(arr.get(count)!=0 && arr.get(count)<=Math.sqrt(n)){ //해당 수가 0이 아니라면
-                for(int i = count + 1; i < arr.size(); i++){
-                    if(arr.get(i)%arr.get(count)==0){ //0이 아닌 수로 수를 나뉘어떨어지는지 체크한다.
-                        arr.remove(i);//소수가 아닌 수를 0으로 만들어 주고,
-                        i--;
-                    }
-                }
-                
-            }
-            System.out.println(count+"회 반복");
-            count++; //다음 나눠줄 소수를 찾기위해 count++한다.
-            if(count>=arr.size()){
-                break;
-            }
-        }
-        
-        answer = arr.size();
+		int n = 7;
+		
+		String answer ="";
+		
+		String abc = "ttttt yyyyy ZZZZZ";
+		char[] arr1 = abc.toCharArray();
+		System.out.println(Arrays.toString(arr1));
+		
+		for(int i = 0 ; i<arr1.length; i++){
+
+			if(65<=arr1[i]&&arr1[i]<=90){
+				if(90<arr1[i]+n){
+					arr1[i]= (char)((n + arr1[i]) - 26);
+				}else{
+					arr1[i]= (char)(arr1[i]+n);
+				}
+			}else if(97<=arr1[i]&&arr1[i]<=122){
+				if(122<arr1[i]+n){
+					arr1[i]= (char)((n + arr1[i]) - 26);
+				}else{
+					arr1[i]= (char)(arr1[i]+n);
+				}
+			}
+		}
+		
+		for(int i : arr1){
+			answer += (char)i;
+		}
 		System.out.println(answer);
+		//A는 65번, Z는 90번까지!
+		//a는 97번, z는 122번까지!
 		
-		
-		System.out.println(Math.sqrt(100));
 	}
 }

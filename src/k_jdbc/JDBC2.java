@@ -1,0 +1,10 @@
+package k_jdbc;
+
+public class JDBC2 {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
