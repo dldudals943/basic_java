@@ -21,7 +21,7 @@ public class SELECT {
 		
 		try {
 			con = DriverManager.getConnection(url,user,password);
-			String sql = "SELECT * FROM EMP";
+			String sql = "SELECT * FROM TB_JDBC_BOARD";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery();
 			ResultSetMetaData metaData = rs.getMetaData();
