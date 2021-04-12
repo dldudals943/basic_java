@@ -68,7 +68,7 @@ public class JDBCBoard {
 		Date time = new Date();
 		String time1 = format1.format(time);
 		
-		String sql = "INSERT INTO TB_JDBC_BOARD (NO, USERS, TITLE, CONTENTS, DATETIME)"
+		String sql = "INSERT INTO TB_JDBC_BOARD (BOARD_NO, USER_ID, TITLE, CONTENTS, REG_DATE)"
 				+ "VALUES ("+ number +", '" + str2 + "', '"+ str1 +"', '"+str3+"', TO_DATE('"+ time1 +"','YYYY-MM-DD HH24-MI-SS'))";
 		
 		int result = sqlu(con, ps, rs, sql, url, user, password);
@@ -78,7 +78,7 @@ public class JDBCBoard {
 
 	private static void delete(int m, Connection con, PreparedStatement ps,
 			ResultSet rs, String url, String user, String password) {
-			String sql = "DELETE FROM TB_JDBC_BOARD WHERE NO = " + m;
+			String sql = "DELETE FROM TB_JDBC_BOARD WHERE BOARD_NO = " + m;
 			int result = sqlu(con, ps, rs, sql, url, user, password);
 			System.out.println(result + "개의 행이 삭제되었습니다.");
 		
@@ -86,29 +86,33 @@ public class JDBCBoard {
 
 	private static void modify(int m, Connection con, PreparedStatement ps,
 			ResultSet rs, String url, String user, String password) {
+			System.out.println("제목을 입력해주세요.");
+			String str1=ScanUtil.nextLine();
+			System.out.println("작성자 이름을 입력해주세요.");
+			String str2=ScanUtil.nextLine();
 			System.out.println("변경할 내용을 입력해주세요.");
 			String contents = ScanUtil.nextLine();
 			SimpleDateFormat format1 = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss");
 			Date time = new Date();
 			String time1 = format1.format(time);
-			String sql = "UPDATE TB_JDBC_BOARD SET CONTENTS = '"+ contents +"', DATETIME = TO_DATE('"+ time1 +"','YYYY-MM-DD HH24-MI-SS') WHERE NO = " + m ;
+			String sql = "UPDATE TB_JDBC_BOARD SET TITLE = '"+ str1 +"',USER_ID = '"+ str2 + "', CONTENTS = '"+ contents +"', REG_DATE = TO_DATE('"+ time1 +"','YYYY-MM-DD HH24-MI-SS') WHERE BOARD_NO = " + m ;
 			int result = sqlu(con, ps, rs, sql, url, user, password);
 			System.out.println(result + "개의 행이 변경되었습니다.");
 	}
 
 	private static void inquiry(int m, Connection con, PreparedStatement ps,
 			ResultSet rs, String url, String user, String password) {
-			String sql = "SELECT * FROM TB_JDBC_BOARD WHERE NO=";
+			String sql = "SELECT * FROM TB_JDBC_BOARD WHERE BOARD_NO=";
 			sql = sql + m;
-			System.out.println("no\tusers\ttitle\tdatetime");
+			System.out.println("BOARD_NO\tUSER_ID\tTITLE\tREG_DATE");
 			sqls(con, ps, rs, sql, url, user, password);
 	
 	}
 
 	private static void entire(Connection con, PreparedStatement ps,
 			ResultSet rs, String url, String user, String password) {
-		String sql = "SELECT no, users, title, datetime FROM TB_JDBC_BOARD ORDER BY NO DESC";
-		System.out.println("no\tusers\ttitle\tdatetime");
+		String sql = "SELECT BOARD_NO, USER_ID, TITLE, REG_DATE FROM TB_JDBC_BOARD ORDER BY BOARD_NO DESC";
+		System.out.println("BOARD_NO\tUSER_ID\t\tTITLE\t\tREG_DATE");
 		sqls(con, ps, rs, sql, url, user, password);
 		
 	}
@@ -124,7 +128,7 @@ public class JDBCBoard {
 			while (rs.next()) {
 				for (int i = 1; i <= columnCount; i++) {
 					Object obj = rs.getObject(i);
-					System.out.print(obj + "\t");
+					System.out.print(obj + "\t\t");
 				}
 				System.out.println();
 			}	
@@ -162,7 +166,7 @@ public class JDBCBoard {
 	private static int lastNumber(Connection con, PreparedStatement ps,
 			ResultSet rs, String url, String user, String password){
 		int number = 0;
-		String sql = "SELECT * FROM (SELECT NO FROM TB_JDBC_BOARD ORDER BY NO DESC) WHERE ROWNUM = 1";
+		String sql = "SELECT * FROM (SELECT BOARD_NO FROM TB_JDBC_BOARD ORDER BY BOARD_NO DESC) WHERE ROWNUM = 1";
 		try {
 			con = DriverManager.getConnection(url,user,password);
 			ps = con.prepareStatement(sql);
