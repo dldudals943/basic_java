@@ -1,7 +1,9 @@
 package test;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Arrays;
-import java.util.Comparator;
+import java.util.Queue;
 
 public class Test6 {
 
@@ -38,6 +40,16 @@ public class Test6 {
 		    }
 		    
 		System.out.println(sum);
+		
+		Queue<Integer> list = new LinkedList<>();
+		list.add(0);
+		list.add(1);
+		int aaaaa = ((LinkedList<Integer>) list).get(0).intValue();
+		System.out.println(aaaaa);
+		System.out.println(list.size());
+		
+		
+
 	}
 
 }
