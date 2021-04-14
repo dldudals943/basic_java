@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Date;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 public class Board {
 

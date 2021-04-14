@@ -1,6 +1,6 @@
 package f_game;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 
 public class MyGame {

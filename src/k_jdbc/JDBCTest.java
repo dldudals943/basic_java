@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import util.JDBCUtil;
+
 public class JDBCTest {
 	public static void main(String[] args) {
 		

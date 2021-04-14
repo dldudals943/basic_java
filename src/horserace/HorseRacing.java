@@ -2,7 +2,7 @@ package horserace;
 
 import java.util.Arrays;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 
 

@@ -1,6 +1,6 @@
 package i_api;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 public class SetComma {
 

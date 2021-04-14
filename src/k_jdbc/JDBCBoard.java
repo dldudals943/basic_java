@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 public class JDBCBoard {
 

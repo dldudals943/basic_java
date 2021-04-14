@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 
-import e_oop.ScanUtil;
+import util.ScanUtil;
 
 public class C_JDBCBoard {
 

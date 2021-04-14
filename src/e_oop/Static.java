@@ -1,5 +1,7 @@
 package e_oop;
 
+import util.ScanUtil;
+
 public class Static {
 
 	/*
